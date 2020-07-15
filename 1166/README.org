@@ -1,0 +1,506 @@
+#+setupfile: ~/.emacs.d/org-templates/level-1.org
+#+title: CIS 1166: Mathematical Concepts In Computing I
+#+subtitle: Spring 2020 – Prof. Crotty
+#+options: html-postamble:nil toc:2
+
+* General Information
+  :PROPERTIES:
+  :CUSTOM_ID: general-information
+  :END:
+
+  - Instructor: Edward T. Crotty
+
+  - Office: SERC 317
+
+  - Email: [[mailto:ecrotty@temple.edu][ecrotty@temple.edu]] or ecrotty@me.com
+
+    - /*Please put the course number and section in the subject line of any email you send me*/
+      so my mail program can sort out your message for quick attention;
+      e.g.: Subject: 20a-CIS1166-00x: <your subject here>
+
+      Note: 20a- designates the spring semester of 2020 so I know this is a current request.
+      Office Phone (215) 204-4207
+
+  - Website:
+
+    - *Canvas*: information, assignments, quizzes and tests will be posted there
+
+    - *McGraw-Hill Connect*: course text, assignments and some quizzes/tests
+
+  - Office Hours TR 1:00-1:45PM; W 12:00-1:30 PM; by appointment; or any time you can find me.
+
+  |                   | /*Section 005*/ | /*Section 006*/ | /*Section 007*/ |
+  | Lecture Times     | TR 9:30-10:50   | TR2:00-3:20     | TR3:30-4:50     |
+  | Location          | Tuttleman 0401B | Tuttleman 401A  | Tuttleman 401A  |
+  | Recitation Time   | W 9:00-10:50    | W 9:00-10:50    | M11:00-12:50    |
+  | Location          | Tuttleman 0305  | Tuttleman 0402  | Tuttleman 0401B |
+  | Recitation Leader | TBA             | TBA             | TBA             |
+
+  - Required Text: Discrete Mathematics and Its Applications, 8th Edition, Kenneth H. Rosen, McGraw Hill
+    Student Solutions Guide, 8th Edition (recommended), Kenneth H. Rosen, McGraw Hill
+
+    These materials and others will be provided through McGraw-Hill’s Connect Web Site;
+    you can purchase an access card at the Temple Bookstore; access to the Connect web site
+    for assignments and some testing is required even if you purchase a hard copy of the text.
+    You may find the linked video of help when registering on Connect:
+    https://vimeo.com/showcase/5316669/video/281874940
+
+* Goals
+  :PROPERTIES:
+  :CUSTOM_ID: goals
+  :END:
+
+  The goal of the course is for students to become more comfortable with practical mathematical ideas relevant to
+  Computer Science, particularly in the areas of mathematical logic, set theory, functions, proof and other topics
+  (see the Course Content document posted separately and the outline below).
+
+* Grades
+  :PROPERTIES:
+  :CUSTOM_ID: grades
+  :END:
+
+  - Quizzes 10% [Quizzes will be graded on a scale of 0-10]
+  - Projects 10% [Projects will be graded on a scale of 0-10]
+  - Homework 10% [Homework will be graded on a scale of 0-10]
+  - Midterms (average of all) 40% [Exams will be graded on a scale of 0-100]
+  - Final Exam (cumulative) 30% [Grading set at the time exams are marked]
+
+  If, for some reason, any part of this grading scheme is deleted, the grades will be computed as a weighted average
+  of the remaining categories using the weights given here. The planned formula for computing your course
+  average is:
+
+  [quiz average pts] + [homework average pts] + [project score pts] + 0.4 * [midterm average] + 0.3 * [final exam score] [fn:final-grade]
+
+[fn:final-grade]
+The weighted score for the final will be determined after the final is given and graded.
+Letter grades will be assigned according to the following scale based on the average of all of your grades as
+computed using the formula above; + and - grades will be given for averages in the top or bottom 2 point ranges;
+e.g., an 80 or 81 average would be assigned a B- and an 88 or 89 a B+:
+
+  $$A ≥ 90, 80.0 ≤ B < 90, 70.0 ≤ C < 80, 60.0 ≤ D < 70, 0 ≤ F < 60$$
+
+* Quizzes
+  :PROPERTIES:
+  :CUSTOM_ID: quizzes
+  :END:
+
+  Quizzes may be announced or unannounced; /*a quiz will be given during each recitation based on that day’s assignment.*/
+  One question "attendance" quizzes may be given near the end of any lecture.
+  Quizzes will be brief, typically 3-4 problems, at least one of which will be directly from the assignment due at that recitation and other(s) will be similar to problems in that assignment.
+  /*No makeup quizzes will be given.*/
+  Your 2 lowest quiz grades will be ignored; /*missed quizzes will count as 0 and will not be dropped.*/
+
+* Exams
+  :PROPERTIES:
+  :CUSTOM_ID: exams
+  :END:
+
+  All midterm exams will be given on line via Canvas (this subject to change).
+  Exams are closed book, but you are permitted a one page (8.5x11”, both sides) “cheat sheet” with formulas, notes and any other material of your choice.
+  The cheat sheet must be of your own invention.
+  Exam problems will, for the most part, parallel the assignments and class examples.
+  There will be some problems that require you to synthesize several ideas to produce a solution.
+
+  The final exam is cumulative and common to all sections of the course.
+  You are allowed a 2 page “cheat sheet” for the final.
+  *All main campus day sections of CIS 1166 will have a common final examinations from 3:30 to 5:30 PM on Friday, May 1, location to be determined.*
+  Attendance at all exams is mandatory.
+  If you have an urgent personal situation that makes attendance at a scheduled exam impossible, you must discuss the situation with the instructor as long as possible /before/ the exam.
+  /*No makeup exams will be given.*/ Students with an unexcused, undocumented absence from any exam will be given a 0 for that exam.
+
+* Attendance
+  :PROPERTIES:
+  :CUSTOM_ID: attendance
+  :END:
+
+  Attendance is required.
+  If you miss more than 6 classes without a documented reason, your final grade may be lowered by 1 grade level and by a further 1 grade level for each 3 additional absences.
+
+* Assignments
+  :PROPERTIES:
+  :CUSTOM_ID: assignments
+  :END:
+
+  You will be given weekly assignments and a project of your choice from several that will be posted, upon which quizzes and exams will be based (see above).
+  Homeworks are due no later than one minute before the beginning of recitation (via file submission through Canvas) and represent the basic level of problem for quizzes and exams.
+  /Homework problems, sometimes directly and sometimes slightly modified, will appear on at least some quizzes and exams./
+  The project may be chosen from among several which will be posted and will be due about 2 weeks before the end of the semester.
+  While you may work in groups of 2 or 3 if you choose, each student is expected to submit a report of their own based on either their individual or small group work.
+  Group submissions will not be accepted.
+
+* Leaving the Course
+  :PROPERTIES:
+  :CUSTOM_ID: leaving-the-course
+  :END:
+
+  The last day to add/drop the course is Monday 1/27/2020.
+  The last day to withdraw is Wednesday, 3/18/2020.
+  These are strict deadlines.
+  Incompletes will only be given in the most unusual of circumstances.
+  Please note that students who have previously withdrawn from this course, or who have already withdrawn from 5 courses since September 2003 may not withdraw.
+
+* Academic Freedom
+  :PROPERTIES:
+  :CUSTOM_ID: academic-freedom
+  :END:
+
+  Freedom to teach and freedom to learn are inseparable facets of academic freedom.
+  The University has adopted a policy on Student and Faculty Academic Rights and Responsibilities (Policy 03.70.02) that can be accessed at http://policies.temple.edu.
+
+* Academic Honesty
+  :PROPERTIES:
+  :CUSTOM_ID: academic-honesty
+  :END:
+
+  Please review Temple’s page on academic honesty and other student responsibilities in the undergraduate bulletin: http://www.temple.edu/bulletin/Responsibilities rights/responsibilities/responsibilities.shtm Cheating on exams/quizzes/projects or any graded work will have serious consequences: a grade of –[maximum score] (and yes, that /is/ a minus sign) will be given if you are detected cheating.
+  Please note that the instructor is the investigator, judge, jury, court of appeals and (academic) executioner under such circumstances.
+  While you may get away with cheating, you cause the most damage to yourself for only minimal gain.
+
+* Special Needs
+  :PROPERTIES:
+  :CUSTOM_ID: special-needs
+  :END:
+
+  Any student who has a need for accommodations based on the impact of a documented disability or medical condition should contact Disability Resources and Services (DRS) in 100 Ritter Annex (drs@temple.edu; 215-204-1280) to request accommodations and learn more about the resources available to you.
+  If you have a DRS accommodation letter to share with me, or you would like to discuss your accommodations, please contact me as soon as practical.
+  I will work with you and with DRS to coordinate reasonable accommodations for all students with documented disabilities.
+  All discussions related to your accommodations will be confidential.
+
+* Topics
+  :PROPERTIES:
+  :CUSTOM_ID: topics
+  :END:
+
+  Below is the list of topics that we will cover this semester with corresponding student expectations (Learning Outcomes).
+  A text referenced list of sections/topics follows.
+  The topic groupings and learning outcomes given below are, for the most part, drawn from the Association for Computing Machinery/IEEE Computer Society CS2013 core curriculum guidelines and used with permission [
+  /Computer Science Curricula 2013: Curriculum Guidelines for Undergraduate Degree Programs in Computer Science./
+  December 20, 2013; The Joint Task Force on Computing Curricula Association for Computing Machinery (ACM)/IEEE Computer Society]
+
+** Logic and Proof
+   :PROPERTIES:
+   :CUSTOM_ID: logic-and-proof
+   :END:
+
+*** Logic
+
+    - Propositional logic
+
+    - Logical connectives
+
+    - Truth tables
+
+    - Normal forms (conjunctive and disjunctive)
+
+    - Validity of a well-formed formula
+
+    - Propositional inference rules (concepts of modus ponens and modus tollens)
+
+    - Predicate logic
+
+    - Universal and existential quantification
+
+    - Limitations of propositional and predicate logic (e.g., expressiveness issues)
+
+**** Learning Outcomes
+
+     - Convert logical statements from informal language to propositional and predicate logic expressions. [Usage]
+
+     - Apply formal methods of symbolic propositional and predicate logic, such as calculating validity of formulae and computing normal forms. [Usage]
+
+     - Use the rules of inference to construct proofs in propositional and predicate logic. [Usage] 
+
+     - Describe how symbolic logic can be used to model real-life situations or applications, including those arising in computing contexts such as software analysis (e.g., program correctness), database queries, and algorithms. [Usage]
+
+     - Apply formal logic proofs and/or informal, but rigorous, logical reasoning to real problems, such as predicting the behavior of software or solving problems such as puzzles. [Usage]
+
+     - Describe the strengths and limitations of propositional and predicate logic. [Familiarity/Assessment]
+
+*** Proof
+
+    - Notions of implication, equivalence, converse, inverse, contrapositive, negation, and contradiction
+
+    - The structure of mathematical proofs
+
+    - Direct proof
+
+    - Proof by contraposition
+
+    - Disproving by counterexample
+
+    - Proof by contradiction
+
+    - Recursive mathematical definitions
+
+**** Learning Outcomes
+
+     - Identify the proof technique used in a given proof. [Familiarity]
+
+     - Outline the basic structure of each proof technique (direct proof, proof by contradiction, contraposition and disproof by counterexample) [Usage]
+
+     - Apply each of the proof techniques (direct proof, proof by contradiction, and induction) correctly in the construction of a sound argument. [Usage]
+
+     - Determine which type of proof is best for a given problem. [Assessment]
+
+** Sets, Functions
+   :PROPERTIES:
+   :CUSTOM_ID: sets-functions
+   :END:
+
+*** Topics
+
+**** Sets
+
+     - Venn diagrams
+
+     - Union, intersection, complement
+
+     - Cartesian product
+
+     - Power sets
+
+     - Cardinality of finite sets
+
+**** Functions
+
+     - Surjections, injections, bijections
+
+     - Inverses
+
+     - Composition
+
+*** Learning Outcomes
+
+    - Explain with examples the basic terminology of functions, and sets. [Familiarity]
+
+    - Perform the operations associated with sets and functions. [Usage]
+
+    - Relate practical examples to the appropriate set or function and interpret the associated operations and terminology in context. [Assessment]
+
+** Number Theory
+   :PROPERTIES:
+   :CUSTOM_ID: number-theory
+   :END:
+
+*** Divisibility and modular arithmetic
+
+    - Divides ( | ); *div* and *mod* operators
+
+    - basic modular arithmetic
+
+*** Integer representations and algorithms
+
+*** Primes and greatest common divisor
+
+    - Euclidian algorithm
+
+*** Learning Outcomes
+
+    - Explain the difference between a | b and a/b. [Familiarity]
+
+    - Perform the operations associated with *div* and *mod*. [Usage]
+
+    - Distinguish between prime and composite numbers. [Familiarity]
+
+    - Perform prime factorizations of composite numbers. [Usage]
+
+    - Perform integer arithmetic (addition and multiplication) in binary [Usage]
+
+    - Perform computations with *div* and *mod* [Assessment]
+
+    - Find greatest common divisors and least common multiples using prime factorizations [Usage]
+
+    - Find greatest common divisors by the Euclidean algorithm [Usage]
+
+    - Relate practical examples to the appropriate computations and interpret the associated operations and terminology in context. [Assessment]
+
+** Counting
+   :PROPERTIES:
+   :CUSTOM_ID: counting
+   :END:
+
+***  Topics
+
+**** Counting arguments
+
+     - Set Cardinality and counting
+
+     - Sum and Product rules
+
+     - Inclusion-exclusion principle
+
+     - Arithmetic and geometric progressions
+
+**** The pigeonhole principle and the generalized pigeonhole principle
+
+     - Permutations and combinations
+
+     - Basic definitions
+
+     - Pascal’s identity
+
+     - Binomial theorem
+
+**** Solving recurrence relations
+
+     - An example of a simple recurrence relation, e.g., Fibonacci Numbers
+
+     - Other examples showing a variety of solutions
+
+***  Learning Outcomes
+
+    - Apply counting arguments, including sum and product rules, inclusion-exclusion principle and arithmetic/geometric progressions. [Usage]
+
+    - Apply the pigeonhole principle in the context of a formal proof. [Usage]
+
+    - Compute permutations and combinations of a set, and interpret the meaning in the context of the particular application. [Usage]
+
+    - Map real-world applications to appropriate counting formalisms, such as determining the number of ways to arrange people around a table, subject to constraints on the seating arrangement, or the number of ways to determine certain hands in cards (e.g., a full house). [Usage]
+
+    - Solve a variety of basic recurrence relations. [Usage]
+
+    - Analyze a problem to determine underlying recurrence relations. [Usage]
+
+    - Perform computations involving modular arithmetic. [Usage]
+
+** Relations
+   :PROPERTIES:
+   :CUSTOM_ID: relations
+   :END:
+
+*** Topics
+
+**** Reflexivity, symmetry, antisymmetry, transitivity and their closures
+
+**** Representations as digraphs and matrices
+
+**** Equivalence relations, partial orders
+
+***  Learning Outcomes
+
+    - Explain with examples the basic terminology of relations. [Familiarity]
+
+    - Perform the operations associated with relations. [Usage]
+
+    - Relate practical examples to the appropriate relation model and interpret the associated
+    operations and terminology in context. [Assessment]
+
+** Graphs and Tree Structures
+   :PROPERTIES:
+   :CUSTOM_ID: graphs-and-tree-structures
+   :END:
+  
+*** Topics
+
+**** Trees
+
+     - Properties
+
+     - Traversals
+
+**** Spanning trees/forests
+
+**** Undirected graphs
+
+**** Directed graphs
+
+**** Weighted graphs
+
+*** Learning Outcomes
+
+    - Illustrate by example the basic terminology of graph theory, as well as some of the properties and special cases of each type of graph/tree. [Familiarity]
+
+    - Demonstrate different traversal methods for trees and graphs, including pre-, post- and in-order traversal of trees. [Usage]
+
+    - Model a variety of real world problems in computer science using appropriate forms of graphs and trees, such as representing a network topology or the organization of a hierarchical file system. [Usage]
+
+    - Show how concepts from graphs and trees appear in data structures, algorithms and counting. [Usage]
+
+    - Explain how to construct a spanning tree of a graph. [Usage]
+
+** Learning Outcomes
+   :PROPERTIES:
+   :CUSTOM_ID: learning-outcomes
+   :END:
+
+   From CS2013 on Learning Outcomes, pages 33&34 (this is primarily for the instructor but it would be well to discuss these points with the students at the beginning of the class so that they can understand what is expected of them to be considered “successful” in the course (i.e., one could look on this as indicating what students should achieve so as to be prepared for the next course in the sequence and a achieve a sufficiently high grade (C-) to move on. ETC):
+   Each KU [knowledge unit] within a KA [knowledge area] lists both a set of topics and the learning outcomes students are expected to achieve with respect to the topics specified.
+   Learning outcomes are not of equal size and do not have a uniform mapping to curriculum hours; topics with the same number of hours may have quite different numbers of associated learning outcomes.
+   Each learning outcome has an associated level of mastery.
+   In defining different levels we drew from other curriculum approaches, especially Bloom’s Taxonomy, which has been well explored within computer science.
+   We did not directly apply Bloom’s levels in part because several of them are driven by pedagogic context, which would introduce too much plurality in a document of this kind; in part because we intend the mastery levels to be indicative and not to impose theoretical constraint on users of this document.
+   We use three levels of mastery, defined as:
+
+   - /*Familiarity*/: The student understands what a concept is or what it means. This level of mastery concerns a basic awareness of a concept as opposed to expecting real facility with its application. It provides an answer to the question “What do you know about this?”
+
+   - /*Usage*/: The student is able to use or apply a concept in a concrete way. Using a concept may include, for example, appropriately using a specific concept in a program, using a particular proof technique, or performing a particular analysis.
+     It provides an answer to the question “What do you know how to do?”
+
+   - /*Assessment*/: The student is able to consider a concept from multiple viewpoints and/or justify the selection of a particular approach to solve a problem.
+     This level of mastery implies more than using a concept; it involves the ability to select an appropriate approach from understood alternatives.
+     It provides an answer to the question “Why would you do that?”
+     As a concrete, although admittedly simplistic, example of these levels of mastery, we consider the notion of iteration in software development, for example for-loops, while-loops, and iterators.
+     At the level of “Familiarity,” a student would be expected to have a definition of the concept of iteration in software development and know why it is a useful technique.
+     In order to show mastery at the “Usage” level, a student should be able to write a program properly using a form of iteration.
+     Understanding iteration at the “Assessment” level would require a student to understand multiple methods for iteration and be able to appropriately select among them for different applications. 
+
+** Listing of sections of the text covered
+   :PROPERTIES:
+   :CUSTOM_ID: listing-of-sections-of-the-text-covered
+   :END:
+
+   The following is a detailed listing of the sections of the text covered in the course; section numbers refer to the Rosen /Discrete Mathematics and its Applications/ (8th Ed.) text.
+
+*** The Foundations: Logic and Proof
+
+    1. (1.1) Propositional Logic
+    2. (1.2) Applications of Propositional Logic
+    3. (1.3) Propositional Equivalences
+    4. (1.4) Predicates and Quantifiers
+    5. (1.6) Rules of Inference
+    6. (1.7) Introduction to Proofs
+    7. (1.8) Proof Methods and Strategy
+
+*** Basic Structures: Sets, Functions, Sequences, and Sums
+
+    1. (2.1) Sets
+    2. (2.2) Set Operations
+    3. (2.3) Functions
+    4. (2.4) Sequences and Summations
+    5. (2.6) Matrices
+
+*** Number Theory
+
+    1. (4.1) Divisibility and Modular Arithmetic
+    2. (4.2) Integer Representations and Algorithms
+    3. (4.3) Primes and Greatest Common Divisors
+
+*** Counting
+
+    1. (6.1) The Basics of Counting
+    2. (6.2) The Pigeonhole Principle
+    3. (6.3) Permutations and Combinations
+
+*** Relations
+
+    1. (9.1) Relations and their Properties
+    2. (9.2.1-9.2.5) n-ary Relations*
+    3. (9.3) Representing Relations
+    4. (9.4) Closure of Relations
+    5. (9.5) Equivalence Relations
+    6. (9.6.1-9.6.2) Partial Orderings
+
+*** Graphs
+
+    1. (10.1) Graphs and Graph Models
+    2. (10.2) Graph Terminology and Special Types of Graphs
+    3. (10.3.1-10.3.4) Representing Graphs and Graph Isomorphisms
+    4. (10.4.1-10.34.5) Connectivity
+
+*** Trees
+
+    1. (11.1) Introduction to Trees
+    2. (11.2) Applications of Trees
+    3. (11.3) Tree Traversal
+    4. (11.4) Spanning Trees
+    5. (11.5) Minimum Spanning Trees

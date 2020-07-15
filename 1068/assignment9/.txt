@@ -1,0 +1,16 @@
+************TEST************
+The color of the sky is _______.
+
+What color is the sky?
+1. Red
+2. Blue
+3. Green
+
+The color of grass is _______.
+
+What color is grass?
+1. Red
+2. Blue
+3. Green
+
+****************************

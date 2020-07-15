@@ -1,0 +1,31 @@
+// Select color input
+const colorPicker = document. querySelector('#colorPicker');
+// Select size input
+const height = document.querySelector('#inputHeight');
+const width = document.querySelector('#inputWidth');
+// When size is submitted by the user, call makeGrid()
+const pixelCanvas = document.querySelector('#pixelCanvas');
+
+const submit = document.querySelector('input[type="submit"]');
+
+submit.addEventListener('click', function(e){
+	e.preventDefault();
+  	makeGrid();
+})
+
+function makeGrid() {
+  clearGrid();
+  pixelCanvas.insertAdjacentHTML('beforeend','<tbody></tbody>');
+  let tbody = pixelCanvas.lastChild;
+	for(let h = 0; h < Number(height.value); h++){
+      	tbody.insertAdjacentHTML('beforeend','<tr></tr>');
+        let row = pixelCanvas.lastChild;
+    	for(let w = 0; w < Number(width.value); w++){
+        	row.insertAdjacentHTML('beforeend', '<td></td>');
+        }
+    }
+}
+
+function clearGrid(){
+	pixelCanvas.innerHTML = '';
+}
