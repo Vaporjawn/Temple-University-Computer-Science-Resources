@@ -33,3 +33,6 @@ CIS 3296	Software Design
 
 CIS 4398	Projects in Computer Science 
 or CIS 4397	Independent Research in Computer Science
+
+
+### [How to Contribute](https://github.com/Vaporjawn/Temple-University-Computer-Science-Resources/blob/master/contributing.md)

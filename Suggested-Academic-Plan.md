@@ -65,6 +65,7 @@ CIS 3207	Introduction to Systems Programming and Operating Systems	4
 
 CS BS Laboratory Science A	4
 General Education/Elective Credits	4
+
  	Term Credit Hours	16
 ---------------------------
 
@@ -77,7 +78,9 @@ Computer Science Elective1	4
 CS BS Laboratory Science B	4
 
 General Education/Elective Credits	4
+
  	Term Credit Hours	15
+---------------------------
 # Year 4
 ## Fall	
 ---------------------------
@@ -102,3 +105,5 @@ General Education/Elective Credits	9-8
  	TOTAL CREDIT HOURS:	123
 ---------------------------
 
+
+### [How to Contribute](https://github.com/Vaporjawn/Temple-University-Computer-Science-Resources/blob/master/contributing.md)

@@ -84,3 +84,5 @@ Advanced Mobile Application Development
 
 CIS 4615
 Ethical Hacking and Intrusion Forensics
+
+### [How to Contribute](https://github.com/Vaporjawn/Temple-University-Computer-Science-Resources/blob/master/contributing.md)

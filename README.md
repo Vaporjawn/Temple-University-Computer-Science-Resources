@@ -1,6 +1,8 @@
 # Temple University Computer Science Resources
  Contains many files pertaining to TU's CST Computer Science curriculum
+## [Computer & Information Science Core courses](https://github.com/Vaporjawn/Temple-University-Computer-Science-Resources/blob/master/Computer%20%26%20Information%20Science%20Core%20courses/README.md)
 
+## [Electives](https://github.com/Vaporjawn/Temple-University-Computer-Science-Resources/blob/master/Computer%20Science%20Electives/README.md)
 -------------------
 ## BACHELOR OF SCIENCE 
 Summary of Requirements for the Degree
@@ -25,3 +27,6 @@ Major Requirements for Bachelor of Science (73-74 s.h.)
 At least 9 courses required for the major must be completed at Temple. At least 7 CIS courses must be completed at Temple.
 
 ## [SUGGESTED ACADEMIC PLAN](https://github.com/Vaporjawn/Temple-University-Computer-Science-Resources/tree/master/Suggested-Academic-Plan.md)
+
+
+### [How to Contribute](https://github.com/Vaporjawn/Temple-University-Computer-Science-Resources/blob/master/contributing.md)
