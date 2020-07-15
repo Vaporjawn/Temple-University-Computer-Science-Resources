@@ -1,0 +1,34 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "google"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+      }
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+  "rules": {
+    "max-len": "off",
+    "require-jsdoc": "off",
+    "no-unused-vars": "off",
+    "new-cap": "off",
+    "no-invalid-this": "off"
+  }
+}

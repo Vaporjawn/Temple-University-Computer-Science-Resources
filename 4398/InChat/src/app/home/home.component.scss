@@ -1,0 +1,31 @@
+#homeContainer{
+    background-color: #0C4376;
+    height:100%;
+    position: fixed;
+    color:white;
+    .welcome{
+        text-align: center;
+    }
+
+    .greetingsHolder{
+        height:80%;
+        justify-content: center;
+
+        .message{
+            padding-top:10px;
+            background-color: white;
+            border:rgb(122, 177, 228);
+            border-radius: 5px;
+            border-style: solid;
+            color:black;
+            text-align: center;
+            .theMesage{
+                height:50px;
+            }
+            .img-holder{
+                margin-top:50px;
+                border:2px solid #0C4376;
+            }
+        }
+    }
+}

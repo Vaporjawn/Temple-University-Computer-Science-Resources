@@ -1,0 +1,11 @@
+<div id="homeContainer" class="container-fluid">
+    <h1 class="h1 welcome">Welcome to InChat!</h1>
+    <h3 class="h3 welcome"><small>The live message translating service!</small></h3>
+    <div *ngIf="greetingMessage" class="row rwo-cols-3 greetingsHolder " >
+        <div class="col-3 m-4 message" *ngFor="let sentence of greetingMessage; index as i">
+            <div class="theMesage">{{sentence.translations[userService.getCurrentUser().userDB.language]}}</div>
+            <div class="img-holder"><img class="img-fluid" src="{{images[i]}}"></div>
+           
+        </div>
+    </div> 
+</div>

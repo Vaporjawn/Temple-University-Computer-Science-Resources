@@ -1,0 +1,91 @@
+<nav id="nav" class="navbar navbar-expand-lg navbar-light">
+  <div class="navbar-header">
+    <a routerLink="" class="navbar-brand" routerLink="/home" style="color:white;">InChat</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/chat" id="link">Chats</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/friends" id="link">Friends</a>
+      </li>
+    </ul>
+    <div style="display:flex; flex-direction: row; flex-wrap:wrap;">
+      <div *ngIf="!loggedIn; else signOut">
+        <app-sign-in></app-sign-in>
+      </div>
+      <!--Modal button-->
+      <button id="settingsButton" type="button" class="btn settingsButton" data-toggle="modal"
+        data-target="#settingsModal" (click)="showAlert = false">
+        <img src="https://img.icons8.com/color/20/000000/settings.png" />
+      </button>
+    </div>
+    <ng-template #signOut>
+      <button type="button" class="btn myButt" (click)="afAuth.signOut(loggedIn)">
+        Sign out
+      </button>
+    </ng-template>
+
+
+
+
+
+
+  </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" style="padding:0;" id="settingsModal" data-backdrop="static" tabindex="-1" role="dialog"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Settings</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!--Edit uName-->
+        <div class="form-group">
+          <label for="exampleInputEmail1">Change Username</label>
+          <input #uNameBox type="text" class="form-control" id="dispNameChange" aria-describedby="ChangeDisplayName">
+          <small id="ChangeDisplayName" class="form-text text-muted">Enter your new username</small>
+        </div>
+        <button class="btn myButt" (click)="editWrapper(uNameBox.value); uNameBox.value = null;">Submit</button>
+        <hr>
+
+        <!--Change Language-->
+        <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Change receiving Language
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li *ngFor="let code of settings.codes; index as i" class="dropdown-item" value="{{code}}" (click)="settings.changeLanguage(code)">
+              {{settings.codeNames[i]}}</li>
+
+          </div>
+        </div>
+        <hr>
+        <!--Alert-->
+        <div *ngIf="showAlert === true" class="alert alert-danger" role="alert">
+          <p>This will permanently delete, your
+            account. Are you sure you want to proceed?</p>
+          <button class="btn btn-danger" data-dismiss="modal" (click)="deleteWrapper(currentUser.uid);">Delete</button>
+          <button class="btn btn-light" (click)="showAlert = false"> Cancel</button>
+        </div>
+        <!--Delete button-->
+        <button type="button" class="btn btn-danger" (click)="showAlert = true">
+          Delete Account
+        </button>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

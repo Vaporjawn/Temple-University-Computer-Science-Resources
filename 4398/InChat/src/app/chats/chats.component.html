@@ -1,0 +1,96 @@
+<!--Chat holder -->
+<div id="chatHolder">
+  <!--Chat list-->
+  <div class="chats">
+    <div class="chatsHeader">
+      Chats
+    </div>
+    <div>
+      <!--New Chat-->
+      <button class="btn btn-outline-secondary newChatButton" type="button" data-toggle="modal"
+        data-target="#exampleModalCenter" id="button-addon2">New
+        Chat</button>
+    </div>
+    
+  </div>
+
+  <div id="messageContainer">
+    <div  #scrollBottom id="messages" class="overflow-auto ml-2">
+      <div class="mr-2" *ngFor="let message of messages">
+        <div *ngIf="message.uName !== userService.getCurrentUser().userDB.uName; else rightSide">
+          <div>
+            <div class="card mt-1 mb-1 received">
+              <div class="card-body">
+                <p class="card-text">{{message.translations[userService.getCurrentUser().userDB.language]}}</p>
+              <!--speech to text for user -->
+<button class="btn btn-outline-secondary" type="submit"
+style="background-color: rgb(197, 202, 206); color:white;" id="button-addon2"
+(click)="messageService.textToSpeech(message.translations[userService.getCurrentUser().userDB.language])">🔊 Say it!</button>
+
+              </div>
+              <p class="text-muted ml-1"><small>
+                  <div class="mt-1 ml-1 sender">{{message.uName}}</div>
+                </small></p>
+            </div>
+          </div>
+        </div>
+        <ng-template #rightSide>
+          <div class="sent">
+            <div class="card mt-1 mb-1 sent">
+              <div class="card-body">
+                <p class="card-text">{{message.translations[userService.getCurrentUser().userDB.language]}}</p>
+              <!--speech to text for other user -->
+                  
+ <button class="btn btn-outline-secondary" type="submit"
+ style="background-color: rgb(197, 202, 206); color:white;" id="button-addon2"
+ (click)="messageService.textToSpeech(message.translations[userService.getCurrentUser().userDB.language])">🔊 Say it!</button>
+</div>
+              <p class="text-muted ml-1"><small>
+                  <div class="mt-1 ml-1 sender">{{message.uName}}</div>
+                </small></p>
+            </div>
+          </div>
+
+        </ng-template>
+      </div>
+    </div>
+    <div id="sendMessageBox" class="input-group">
+      <input #messageBox type="text" class="form-control" placeholder="Message..." aria-label="Message"
+        aria-describedby="button-addon2"
+        (keyup.enter)="messageService.sendMessage('test-id',messageBox.value); messageBox.value = ''">
+      <div>
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2"
+          (click)="messageService.sendMessage('test-id',messageBox.value); messageBox.value = ''">Send</button>
+        <!--first arg change to chatID-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="Modal-title" id="exampleModalLongTitle">Choose Friends To Add To New Chat</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <div *ngFor="let friend of userService.getUserFriendsUname().userDB.friends" class="col-3" style="padding:10px">
+              <label><input type="checkbox" value="">Add</label>>
+              {{ friend }}
+          </div>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Create Chat</button>
+      </div>
+    </div>
+  </div>
+</div>

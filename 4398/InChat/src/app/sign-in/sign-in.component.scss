@@ -1,0 +1,35 @@
+.myButt {
+    background-color: #0C4376;
+    border-color: #0C4376;
+    transition: background-color, ease-in .15s;
+    font-size: 1em;
+    color:white;
+    width:auto;
+    vertical-align: middle;
+}
+.myButt:hover {
+    background-color: #7AB1E4;
+    color: #0C4376;
+}
+
+.settingsButton {
+    float:right !important;
+    background-color:white;
+    position:relative;
+    width:auto;
+    height:auto;
+    vertical-align: middle;
+    transition: background-color .15s;
+    img {
+        position:absolute;
+        top: 50%;
+        left:50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+.settingsButton:hover {
+    background-color: #0C4376;
+}
+

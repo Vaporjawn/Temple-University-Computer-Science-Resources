@@ -1,0 +1,31 @@
+<div class="container-fluid friendsHolder" style="background-color: #0C4376;">
+    <div id="addFriend" class="col-3" style="padding-top:10px">
+        <div class="input-group mb-3">
+            <input #addBox type="text" class="form-control" placeholder="Add Friend by email " aria-label="Message"
+                (keyup.enter)="friendsService.addFriend(uid, addBox.value)" aria-describedby="button-addon2">
+            <div>
+                <button class="btn btn-outline-secondary" type="button" style="background-color: #7AB1E4; color:white;"
+                    id="button-addon3"
+                    (click)="friendsService.addFriend(afAuth.Auth.auth.currentUser.uid, addBox.value)">Add</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3 class="friendsHeader">
+            Friends List of {{ userService.getCurrentUser().userDB.uName }}
+        </h3>
+        <ul>
+            <div class="">
+                <div *ngFor="let friend of userService.getCurrentUser().userDB.friends" class="col-3 mb-1 friends"
+                    style="padding:10px">
+                    {{ friend }}
+                    <button class="btn btn-outline-secondary addFriend" type="button"
+                        id="button-addon4"
+                        (click)="friendsService.deleteFriend(afAuth.Auth.auth.currentUser.uid,friend)">Delete</button>
+
+                </div>
+            </div>
+        </ul>
+    </div>
+
+</div>
